@@ -1,0 +1,2 @@
+[console_scripts]
+blueshield = blueshield.cli:main

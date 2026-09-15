@@ -1,0 +1,9 @@
+flowchart LR
+ A[ Synthetic Windows/Sysmon event ] --> B[ Normalize ]
+ B --> C[ Evaluate YAML rule ]
+ C -->|match| D[ Alert ]
+ D --> E[ Evidence timeline ]
+ E --> F[ MITRE mapping ]
+ F --> G[ Containment recommendation ]
+ G --> H[ Incident report ]
+ C -->|no match| I[ Baseline / no alert ]

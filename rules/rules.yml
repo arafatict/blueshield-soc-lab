@@ -1,0 +1,40 @@
+- id: BS-AUTH-001
+  title: Repeated failed logons against one account
+  event_type: authentication_failure
+  severity: high
+  confidence: high
+  threshold_count: 5
+  window_minutes: 10
+  mitre_technique_id: T1110
+  mitre_technique_name: Brute Force
+  containment: Validate the account activity and consider temporary account protection.
+  remediation: Review MFA, lockout policy and authentication logging.
+- id: BS-PS-001
+  title: Suspicious PowerShell command line
+  event_type: process_create
+  process_name: powershell.exe
+  command_contains: EncodedCommand
+  severity: high
+  confidence: medium
+  mitre_technique_id: T1059.001
+  mitre_technique_name: PowerShell
+  containment: Review the affected test endpoint and user context.
+  remediation: Review PowerShell logging and endpoint execution controls.
+- id: BS-ACC-001
+  title: Local account created
+  event_type: account_created
+  severity: medium
+  confidence: high
+  mitre_technique_id: T1136.001
+  mitre_technique_name: "Create Account: Local Account"
+  containment: Validate the change request and disable an unauthorized test account.
+  remediation: Audit local administrator membership and account-creation controls.
+- id: BS-SVC-001
+  title: Windows service created
+  event_type: service_created
+  severity: medium
+  confidence: medium
+  mitre_technique_id: T1543.003
+  mitre_technique_name: Windows Service
+  containment: Verify service ownership and stop an unauthorized test service.
+  remediation: Restrict service installation and review change approval controls.

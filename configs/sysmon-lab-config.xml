@@ -1,0 +1,8 @@
+<!-- Reference-only, safe lab configuration fragment. It is not executed by this project. -->
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <ProcessCreate onmatch="include" />
+    <NetworkConnect onmatch="include" />
+    <CreateRemoteThread onmatch="include" />
+  </EventFiltering>
+</Sysmon>
